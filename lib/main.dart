@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/data.dart';
+import 'package:grocery_app/item_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,6 +46,15 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+
+final data = Product(
+    'Apel',
+    '55.000',
+    '1kg',
+    'assets/apel.jpg',
+    'Apel adalah buah yang kaya akan vitamin, terutama vitamin C. Buah ini memiliki rasa manis dengan sedikit asam, menjadikannya pilihan yang sempurna untuk camilan sehat dan segar. Cocok dimakan langsung atau diolah menjadi berbagai hidangan.'
+);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,6 +111,21 @@ class _MainPageState extends State<MainPage> {
             ],
           )
         ],
+      ),
+      body: Container(
+        padding: const EdgeInsets.all(10),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 10,
+            crossAxisCount: 2,
+            childAspectRatio: 0.7,
+          ),
+          itemBuilder: (context, index){
+            return ItemWidget(product: allData[index]);
+          },
+          itemCount: allData.length,
+        ),
       ),
     );
   }
