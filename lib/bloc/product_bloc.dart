@@ -1,5 +1,6 @@
-import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:grocery_app/models/product.dart';
 
 part 'product_event.dart';
 part 'product_state.dart';
