@@ -47,14 +47,6 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
 
-final data = Product(
-    'Apel',
-    '55.000',
-    '1kg',
-    'assets/apel.jpg',
-    'Apel adalah buah yang kaya akan vitamin, terutama vitamin C. Buah ini memiliki rasa manis dengan sedikit asam, menjadikannya pilihan yang sempurna untuk camilan sehat dan segar. Cocok dimakan langsung atau diolah menjadi berbagai hidangan.'
-);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
