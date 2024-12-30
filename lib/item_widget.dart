@@ -1,6 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:grocery_app/data.dart';
 import 'package:grocery_app/product_detail.dart';
+
+import 'models/product.dart';
 
 class ItemWidget extends StatelessWidget {
   const ItemWidget({
@@ -30,17 +34,17 @@ class ItemWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Hero(
-              tag: product.image,
+              tag: product.images[0],
               child: SizedBox(
                 width: 150,
-                child: Image.asset(product.image),
+                child: Image.network(product.images[0]),
               ),
             ),
             const SizedBox(
               height: 6,
             ),
             Text(
-              'Rp ${product.price}',
+              'USD ${product.price}',
               style: const TextStyle(
                 color: Colors.green,
                 fontSize: 20,
@@ -51,24 +55,14 @@ class ItemWidget extends StatelessWidget {
               height: 2,
             ),
             Text(
-              product.name,
+              product.title,
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w800,
               ),
             ),
             const SizedBox(
-              height: 2,
-            ),
-            Text(
-              product.quantity,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w300,
-              ),
-            ),
-            const SizedBox(
-              height: 4,
+              height: 8,
             ),
             const Divider(
               height: 1,
